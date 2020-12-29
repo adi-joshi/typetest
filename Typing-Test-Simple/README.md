@@ -8,22 +8,22 @@ Enjoy!
 Welcome to my Typing Test. This is a simple version of the typing test program. It uses the in-built clock provided in the time.h module in C.
 
 ## **Download:**
-- You can clone the repository onto your local device by using the command: git clone https://github.com/adi-joshi/Random-Projects/tree/typing-test-simple-initial/Typing-Test-Simple
+- You can clone the repository onto your local device by using the command: ``` git clone https://github.com/adi-joshi/Random-Projects/tree/typing-test-simple-initial/Typing-Test-Simple```
 - You can download the "Typing-Test-Simple" folder from Github.
 
 ## **Using the Typing Test:**
 You will need a C compiler (preferrably either gcc or clang) to compile the typing\_test\_copy.c file. After you have a compiler, follow the steps:
 - Open your Terminal window.
-- Navigate to your "Typing-Test-Simple" folder on terminal (you can type the command "cd **PATH/NAME/**", or you can type "cd " and drag and drop the folder into your terminal window)
-- Compile the "typing\_test\_copy.c" file (example: if you are using the gcc compiler, you can type "gcc typing\_test\_copy.c -o ttc". This will compile the typing\_test\_copy.cto an executable named "ttc")
-- Type the command "./ttc" or double click on the ttc executable to run the program.
+- Navigate to your "Typing-Test-Simple" folder on terminal (you can type the command ```cd **PATH/NAME/**```, or you can type ```cd ``` and drag and drop the folder into your terminal window)
+- Compile the "typing\_test\_copy.c" file (example: if you are using the gcc compiler, you can type ```gcc typing\_test\_copy.c -o ttc```. This will compile the typing\_test\_copy.cto an executable named "ttc")
+- Type the command ```./ttc``` or double click on the ttc executable to run the program.
 - The program will start running in a terminal window. Follow the instructions on the screen to start the test. 
 
 ## **How it works:**
 The typing test uses a wordlist/quotelist. It prints out random words/quotes from that list. You can then type the words on your terminal window. After you press enter, it will output your WPM, and your mistakes.
 
 ## **Wordlist:**
-The wordlist used in testing will be uploaded shortly.
+The wordlist I used will be uploaded shortly.
 
 If you want to use your own wordlist, it must follow the following rules:
 - 1 word/quote per line
