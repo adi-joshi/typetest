@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=
-OBJECTS=main.o quotelist.o test.o stats.o
+OBJECTS=src/main.o src/quotelist.o src/test.o src/stats.o
 EXEC=typetest
 
 ${EXEC}: ${OBJECTS}
