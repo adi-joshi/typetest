@@ -32,16 +32,17 @@ stats *do_test(test *t) {
 
   struct timeval start, end;
   gettimeofday(&start, NULL);
-  for (int i = 0; i < t->len; i++) {
+  int i = 0;
+  while(i < t->len - 1) {
     char c = getch();
     if (t->script[i] == c) {
       attroff(COLOR_PAIR(2));
       attron(COLOR_PAIR(1));
       addch(c);
+      i++;
     } else {
       attroff(COLOR_PAIR(1));
       attron(COLOR_PAIR(2));
-      addch(c);
     }
   }
   gettimeofday(&end, NULL);

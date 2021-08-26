@@ -42,7 +42,6 @@ test *make_test(quotelist *qt, int n) {
   }
 
   script[curlen - 1] = '\0';
-  curlen++;
   script = realloc(script, sizeof(char) * curlen);
   test *t = test_create(script, curlen);
   return t;
