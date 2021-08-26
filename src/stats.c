@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <ctype.h>
 #include "stats.h"
 #include "ncurses.h"
 
@@ -40,9 +41,16 @@ stats *do_test(test *t) {
       attron(COLOR_PAIR(1));
       addch(c);
       i++;
-    } else {
+    } else if (isprint(c)) {
       attroff(COLOR_PAIR(1));
       attron(COLOR_PAIR(2));
+      addch(c);
+      i++;
+    } else if (c == KEY_BACKSPACE) {
+      delch();
+      i--;
+    } else {
+      continue;
     }
   }
   gettimeofday(&end, NULL);
@@ -56,7 +64,7 @@ stats *do_test(test *t) {
 
 void print_stats(stats *s) {
   printf("You typed %d characters in %.2lf seconds!\n", s->chars, s->seconds);
-  printf("Your WPM was: %lf\n", (s->chars / s->seconds) * 12);
+  printf("Your WPM was: %.2lf\n", (s->chars / s->seconds) * 12);
 }
 
 void stats_destroy(stats *s) {
