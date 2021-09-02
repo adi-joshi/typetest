@@ -19,12 +19,15 @@ static stats *stats_create(int chars, double seconds) {
 }
 
 stats *do_test(test *t) {
+  // setting up screen
   initscr();
   clear();
   // curs_set(0);
   start_color();
   cbreak();
   noecho();
+  
+  // colors for correct and wrong chars
   init_pair(1, COLOR_GREEN, COLOR_BLACK);
   init_pair(2, COLOR_RED, COLOR_BLACK);
   printw("%s", t->script);
@@ -37,19 +40,32 @@ stats *do_test(test *t) {
   while(i < t->len - 1) {
     char c = getch();
     if (t->script[i] == c) {
+      // if correct, then print char with green color.
       attroff(COLOR_PAIR(2));
       attron(COLOR_PAIR(1));
       addch(c);
       i++;
     } else if (isprint(c)) {
+      // if wrong, then print the char in script with red color.
       attroff(COLOR_PAIR(1));
       attron(COLOR_PAIR(2));
-      addch(c);
+      addch(t->script[i]);
       i++;
-    } else if (c == KEY_BACKSPACE) {
-      delch();
-      i--;
+    } else if ((int) c == 127) {
+      // if backspace, we either ignore (if i == 0), or we "remove" the color
+      // from the previous letter.
+      if (i == 0) {
+        continue;
+      } else {
+        attroff(COLOR_PAIR(1));
+        attroff(COLOR_PAIR(2));
+        i--;
+        move(0, i);
+        addch(t->script[i]);
+        move(0, i);
+      }
     } else {
+      // if it is not a printable character, don't do anything
       continue;
     }
   }
