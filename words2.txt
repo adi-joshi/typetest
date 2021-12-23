@@ -1,0 +1,10 @@
+cat
+dog
+rabbit
+hare
+horse
+zebra
+elephant
+dinosaur
+giraffe
+lion

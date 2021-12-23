@@ -29,6 +29,15 @@ If you want to use your own wordlist, it must follow the following rules:
 _In practice, any wordlist that follows the above rules will work._
 
 ## **Customizing:**
-To be added.
+You can customize the typing test with the following command line switches:
+- ```-w=path/to/wordlist.txt```: This switch changes the wordlist used for the typing test from the default one to the one you specify. An example use is ```-w=words2.txt```.
+
+- ```-t=[n]```: This switch changes the number of words that appear in the test. An example use is ```-t=20```. 
+
+A typical example of customizing would be to create the typing test binary, and
+then run in a manner similar to the following: ```./typetest -t=20 -w=words2.txt```
+
+## **Resources:**
+- 1000\_most\_common\_words.txt: Words in file taken from github gist gist.github.com/deekayen/4148741 by user deekayen.
 
 Any and all feedback is appreciated!.
