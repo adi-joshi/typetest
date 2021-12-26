@@ -55,7 +55,7 @@ int main(int argc, char **argv) {
     }
   }
   if (qt == NULL) {
-    qt = quotelist_from_file("../1000_most_common_words.txt");
+    qt = quotelist_from_file("1000_most_common_words.txt");
   }
   t = make_test(qt, test_words);
   stats *s = do_test(t);
